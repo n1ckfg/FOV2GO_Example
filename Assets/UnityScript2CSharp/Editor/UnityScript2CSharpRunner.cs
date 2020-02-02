@@ -43,7 +43,7 @@ public class UnityScript2CSharpRunner : UnityEditor.EditorWindow
             return;
 
 #if UNITY_2017_3_OR_NEWER        
-        var msg = string.Format("To convert your project to C# go to {0}.\r\n\r\nMake sure you have a backup of your project before runing the conversion tool.", MenuEntry);
+        var msg = string.Format("To convert your project to C# go to {0}.\r\n\r\nMake sure you have a backup of your project before running the conversion tool.", MenuEntry);
         EditorUtility.DisplayDialog(Title, msg, "Ok");
 #else            
         EditorUtility.DisplayDialog(Title, string.Format("You are using Unity version {0}.\r\n\r\nTo use the graphical tool, you need at least Unity version 2017.3\r\n(you can still run the command line tool though)", Application.unityVersion), "Ok");
@@ -192,7 +192,7 @@ public class UnityScript2CSharpRunner : UnityEditor.EditorWindow
             var increment = 0.5f / unityScriptCount; // Assumes that each script will take 2 x seepTime
             while (!p.HasExited && sw.ElapsedMilliseconds < 60000)
             {
-                if (EditorUtility.DisplayCancelableProgressBar("Runing", "converting from UnityScript -> C#", value))
+                if (EditorUtility.DisplayCancelableProgressBar("Running", "converting from UnityScript -> C#", value))
                 {
                     p.Kill();
                     return;
